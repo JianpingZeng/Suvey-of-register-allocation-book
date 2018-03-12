@@ -1,0 +1,65 @@
+\documentclass[12pt]{book}
+\usepackage{hyperref}
+\hypersetup
+{
+  colorlinks,
+  citecolor=black,
+  filecolor=black,
+  linkcolor=black,
+  urlcolor=black
+}
+\title{Severy of Register Allocation}
+\author{Jian-Ping Zeng}
+\begin{document}
+
+\maketitle
+\tableofcontents
+\chapter{Preface}
+With rapidly development of CPU speed, the gap of speed between CPU and memory
+greatly increasing from last century to nowadays.
+
+\chapter{Introduction}
+
+\chapter{Local method}
+\section{Simply based on cache on Top of Stack}
+
+\chapter{Global method}
+
+\section{Graph coloring}
+This method is the first globally approach invented by Chainth etc in 80s, 20
+century for IBM 360 serial of super computer. It would obtain significantly
+excellent allocation result for RISC architecture. Generally, it uses a
+classical graph coloring to model register allocation, so that after solving the
+coloration, we can map the coloring result into register assignment.
+
+\section{Linear Scan}
+As we illustrated in the last chapter, the solution to register allocation based
+on coloring has it's intrinsic shortege that it is needed to spend much time on
+register allocation of compiler in order to obtain the optimial or near-optimial
+allocation performance. However, Just in time(JIT) compiler usually tradeoff compilation
+time for execution of generated machine code, in this case, people generally
+think it is important to short compiling time than code quality.
+
+\section{PBQP}
+PBQP means that partitioned boolean quadratic problem which is a non-liearly
+optimization problem in mathmatic.
+
+\section{Integral Linear Programming}
+By transforming the register allocation into integral programming as follows,
+allocation would be solved in optimal.
+
+\section{Multi-commodity Network flow}
+Also, there are many researchers conducts another method that maps allocation to
+a multi-commodity network flow(MCNF) problem. Then, transforming the solution of MCNF
+to allocation result.
+
+\section{Puzzle solution}
+TODO
+
+\chapter{Conslusion}
+In this book, we conduct a severy for register allocation, illustrating several
+important strategies used for solving register allocation problem in detail and
+making a comparison about those methods. Local allocation is pretty faster than
+all of other ways at the cost of generated code quality.
+
+\end{document}
